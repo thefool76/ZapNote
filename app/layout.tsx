@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className={cn("relative h-full font-sans antialiased", inter.className)}>
         <main className="relative flex flex-col min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" >
+          <Navbar />
           {children}
           </ThemeProvider>
         </main>
