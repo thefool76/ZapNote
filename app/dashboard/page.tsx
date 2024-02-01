@@ -1,3 +1,4 @@
+import Noter from "@/components/Noter";
 import {
   Card,
   CardContent,
@@ -7,8 +8,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { RocketIcon, PlusCircledIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/button";
-import Pad from "@/components/Pad";
+
+
 
 const dashboard = () => {
   return (
@@ -20,10 +21,7 @@ const dashboard = () => {
         <CardDescription>Here's a list of your tasks!</CardDescription>
       </CardHeader>
       <CardContent>
-        <Button>
-          <PlusCircledIcon className="mr-1 h-4 w-4 "/> Add task
-        </Button>
-        <Pad />
+      <Noter />
       </CardContent>
       <CardFooter>
         <p>Card Footer</p>
