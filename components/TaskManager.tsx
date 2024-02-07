@@ -12,12 +12,12 @@ import {
 const TaskManager = () => {
   return (
     <Table>
-    <TableCaption>A list of your recent invoices.</TableCaption>
+    <TableCaption>lis</TableCaption>
     <TableHeader>
       <TableRow>
         <TableHead className="w-[100px]">Invoice</TableHead>
         <TableHead>Status</TableHead>
-        <TableHead>Method</TableHead>
+        <TableHead>Title</TableHead>
         <TableHead className="text-right">Amount</TableHead>
       </TableRow>
     </TableHeader>
