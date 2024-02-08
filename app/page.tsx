@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Hero from "@/components/Hero";
 import ScrollToTop from "@/components/ScrollToTop";
 import Sections from "@/components/Sections";
+import Service from "@/components/Service";
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero  />
         <Sections />
         <About />
+        <Service />
         <ScrollToTop />
       </div>
   );
