@@ -34,7 +34,7 @@ const Navbar = () => {
           <ModeToggle />
         </div>
       </div>
-      <div className="border my-1 grey-200"></div>
+      <hr className="w-12/12 mx-auto" />
     </nav>
   );
 };

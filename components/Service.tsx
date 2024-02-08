@@ -11,22 +11,22 @@ interface ServiceProps {
   
   const serviceList: ServiceProps[] = [
     {
-      title: "Code Collaboration",
+      title: "Track Task",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-      icon: <CalendarIcon />,
+        "Track Task Description provides the functionality you need to streamline your workflow and achieve your goals.",
+      icon: <CalendarIcon className="w-10 h-10"/>,
     },
     {
       title: "Project Management",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-      icon: <MixIcon />,
+        "Zapnote ensures your projects stay on track and team members stay connected. Simplify project management and unleash your productivity with ProjectMate.",
+      icon: <MixIcon className="w-10 h-10"/>,
     },
     {
-      title: "Task Automation",
+      title: "Search Feature",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-      icon: <MagnifyingGlassIcon />,
+        "Effortlessly navigate through search results with minimal clutter, allowing you to focus on what matters most.",
+      icon: <MagnifyingGlassIcon className="w-10 h-10"/>,
     },
   ];
 
@@ -43,8 +43,7 @@ const Service = () => {
         </h2>
 
         <p className="text-muted-foreground text-xl mt-4 mb-8 ">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-          dolor.
+        Elevate your note-taking journey with our client-focused service. From capturing ideas to organizing meeting minutes, our app is tailored to prioritize your needs.
         </p>
 
         <div className="flex flex-col gap-8">

@@ -1,4 +1,6 @@
 import About from "@/components/About";
+import { FAQ } from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ScrollToTop from "@/components/ScrollToTop";
 import Sections from "@/components/Sections";
@@ -12,6 +14,8 @@ export default function Home() {
         <Sections />
         <About />
         <Service />
+        <FAQ />
+        <Footer />
         <ScrollToTop />
       </div>
   );

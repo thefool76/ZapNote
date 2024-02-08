@@ -27,7 +27,7 @@ const Sections = () => {
           </CardContent>
         </Card>
         
-        <Card className=" mt-7 mx-7">
+        <Card className=" mt-7">
           <CardHeader>
             <CardTitle>
               <TargetIcon  className="w-8 h-8"/>
@@ -40,7 +40,7 @@ const Sections = () => {
           </CardContent>
         </Card>
 
-        <Card className=" mt-7 mx-7">
+        <Card className=" mt-7 ">
           <CardHeader>
             <CardTitle>
               <LapTimerIcon className="w-8 h-8"/>
@@ -53,7 +53,7 @@ const Sections = () => {
           </CardContent>
         </Card>
 
-        <Card className=" mt-7 mx-7">
+        <Card className=" mt-7 ">
           <CardHeader>
             <CardTitle>
               <EyeNoneIcon  className="w-8 h-8"/>
