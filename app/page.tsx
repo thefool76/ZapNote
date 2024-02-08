@@ -1,4 +1,6 @@
+import About from "@/components/About";
 import Hero from "@/components/Hero";
+import ScrollToTop from "@/components/ScrollToTop";
 import Sections from "@/components/Sections";
 
 
@@ -7,6 +9,8 @@ export default function Home() {
       <div>
         <Hero  />
         <Sections />
+        <About />
+        <ScrollToTop />
       </div>
   );
 }

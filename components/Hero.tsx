@@ -6,10 +6,11 @@ import { DashboardIcon } from "@radix-ui/react-icons";
 
 
 
+
 const Hero = () => {
   return (
     <main>
-      <section className="mb-10">
+      <section className="py-20 md:py-32">
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight  sm:text-6xl  ">
             Quick,Easy & minimal

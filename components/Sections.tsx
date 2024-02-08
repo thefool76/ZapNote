@@ -9,7 +9,7 @@ import { FileIcon, TargetIcon, LapTimerIcon, EyeNoneIcon } from "@radix-ui/react
 
 const Sections = () => {
   return (
-    <div className="mt-10 px-6">
+    <div className="pt-24 sm:py-32">
       <h1 className="text-4xl font-bold text-center">ZapNote in a Nutshell</h1>
       <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 space-x-4 mx-5">
         <Card className=" mt-7">
