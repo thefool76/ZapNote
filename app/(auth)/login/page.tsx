@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
@@ -15,10 +15,12 @@ import {
 } from "@/components/ui/form";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
+import { actionLoginUser } from "@/lib/server-action/auth-action";
 import { Button } from "@/components/ui/button";
+import { LightningBoltIcon } from "@radix-ui/react-icons";
 
 const LoginPage = () => {
-  // const router = useRouter();
+  const router = useRouter();
   const [submitError, setSubmitError] = useState("");
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -31,7 +33,14 @@ const LoginPage = () => {
 
   const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (
     formData
-  ) => {};
+  ) => {
+    const { error } = await actionLoginUser(formData);
+    if (error) {
+      form.reset()
+      setSubmitError(error.message);
+    }
+    router.replace('/dashboard')
+  };
   return (
     <Form {...form}>
       <form
@@ -39,13 +48,14 @@ const LoginPage = () => {
           if (submitError) setSubmitError("");
         }}
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full sm:justify-center sm:[400px] space-y-6 flex flex-col"
+        className=" sm:justify-center sm:[400px] space-y-6 flex flex-col"
       >
-        <Link href="/" className="w-full flex justify-left items-center">
-          <h1>zapnote</h1>
+        <Link href="/" className="w-full  flex justify-center items-center">
+        <LightningBoltIcon className="w-10 h-10" />
+        <h1 className=" text-4xl font-bold">ZapNote</h1>
         </Link>
-        <FormDescription className="text-foreground/60">
-          Your Simple and Minimal powerfull
+        <FormDescription className="text-center text-foreground/60 text-xl">
+        Where Minimal Meets Real-Time Collaboration – Keeping Your Workspace Clean and Productivity High!"
         </FormDescription>
         <FormField
           disabled={isLoading}
@@ -79,9 +89,12 @@ const LoginPage = () => {
           )}
         />
         {submitError && <FormMessage>{submitError}</FormMessage>}
-        <Button type='submit' className='w-full p-6' size='lg' disabled={isLoading} >
-
+        <Button type='submit' className='w-full p-6 text-lg' size='lg' disabled={isLoading} >
+            Login
         </Button>
+        <span className="self-container">Dont have an account?{' '}
+        <Link href='/signup' className="underline">Sign Up</Link>
+        </span>
       </form>
     </Form>
   );
