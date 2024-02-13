@@ -92,7 +92,7 @@ const LoginPage = () => {
         <Button type='submit' className='w-full p-6 text-lg' size='lg' disabled={isLoading} >
             Login
         </Button>
-        <span className="self-container">Dont have an account?{' '}
+        <span className="self-container">Don't have an account?{' '}
         <Link href='/signup' className="underline">Sign Up</Link>
         </span>
       </form>

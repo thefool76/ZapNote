@@ -19,6 +19,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { MailCheck } from "lucide-react";
+import { FormSchema } from "@/lib/types";
 
 const SingUpFormSchema = z
   .object({
@@ -66,7 +69,7 @@ const Singup = () => {
   const onSubmit = () => {};
 
   const isLoading = form.formState.isSubmitting;
-  const signUpHandler = () => {};
+  const signUpHandler = async ({ email, password }:z.infer<typeof FormSchema>) => {};
 
   return (
     <Form {...form}>
@@ -75,7 +78,7 @@ const Singup = () => {
           if (submitError) setSubmitError("");
         }}
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full sm:justify-center sm-w[400px] space-y-6 flex-col"
+        className=" sm:justify-center sm:[400px] space-y-6 flex flex-col"
       >
         <Link href="/" className="w-full  flex justify-center items-center">
           <LightningBoltIcon className="w-10 h-10" />
@@ -137,12 +140,21 @@ const Singup = () => {
         {submitError && <FormMessage>{submitError}</FormMessage>}
         <span className="self-container">
           Already have an account?{" "}
-          <Link href="/login" className="underline">
+          <Link href="/login" className=" underline">
             LogIn
           </Link>
         </span>
         {(confirmation || codeExchangeError) && <>
-        
+          <Alert className={confirmationAndErrorStyles}>{
+            !codeExchangeError && <MailCheck className="h-4 w-4"/>
+          }
+          <AlertTitle> 
+            {codeExchangeError ? "Invalid link" : "Check you email"}
+            </AlertTitle>
+            <AlertDescription>
+              {codeExchangeError || "Email confirmation sent successfully"}
+            </AlertDescription>
+          </Alert>
         </>}
       </form>
     </Form>
