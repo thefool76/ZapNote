@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { MailCheck } from "lucide-react";
 import { FormSchema } from "@/lib/types";
+import { actionSignUpUser } from "@/lib/server-action/auth-action";
 
 const SingUpFormSchema = z
   .object({
@@ -66,10 +67,21 @@ const Singup = () => {
     defaultValues: { email: "", password: "", confirmPassword: "" },
   });
 
-  const onSubmit = () => {};
+  const onSubmit = async ({
+    email,
+    password,
+  }:z.infer<typeof FormSchema>) => {
+    const {error} = await actionSignUpUser({email, password});
+    if (error) {
+      setSubmitError(error.message);
+      form.reset();
+      return;
+    }
+    setConfirmation(true);
+  };
 
   const isLoading = form.formState.isSubmitting;
-  const signUpHandler = async ({ email, password }:z.infer<typeof FormSchema>) => {};
+  
 
   return (
     <Form {...form}>
@@ -78,7 +90,7 @@ const Singup = () => {
           if (submitError) setSubmitError("");
         }}
         onSubmit={form.handleSubmit(onSubmit)}
-        className=" sm:justify-center sm:[400px] space-y-6 flex flex-col"
+        className=" w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col"
       >
         <Link href="/" className="w-full  flex justify-center items-center">
           <LightningBoltIcon className="w-10 h-10" />

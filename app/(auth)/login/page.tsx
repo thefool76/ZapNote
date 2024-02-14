@@ -48,7 +48,7 @@ const LoginPage = () => {
           if (submitError) setSubmitError("");
         }}
         onSubmit={form.handleSubmit(onSubmit)}
-        className=" sm:justify-center sm:[400px] space-y-6 flex flex-col"
+        className="w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col"
       >
         <Link href="/" className="w-full  flex justify-center items-center">
         <LightningBoltIcon className="w-10 h-10" />
