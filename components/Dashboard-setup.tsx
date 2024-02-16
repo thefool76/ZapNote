@@ -1,6 +1,8 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { AuthUser } from '@supabase/supabase-js';
 import { Card,CardContent,CardDescription,CardHeader, CardTitle } from './ui/card';
+import EmojiPicker from '@/components/emojipicker';
 
   interface DashboardSetupProps{
     user:AuthUser;
@@ -11,6 +13,7 @@ const Dashboardsetup: React.FC<DashboardSetupProps> = ({
   subscription,
   user,
 }) => {
+  const [selectedEmoji, setSelectedEmoji] = useState('')
   return (
     <Card className='w-[800px] h-screen sm:h-auto'>
       <CardHeader>
@@ -23,7 +26,13 @@ const Dashboardsetup: React.FC<DashboardSetupProps> = ({
       </CardHeader>
       <CardContent>
         <form onSubmit={() => {}}>
-          <div className='flex flex-col gap-4'></div>
+          <div className='flex flex-col gap-4'>
+            <div className='text-5xl'>
+            <EmojiPicker getValue={(emoji) => setSelectedEmoji(emoji)}>
+                  {selectedEmoji}
+                </EmojiPicker>
+            </div>
+          </div>
 
         </form>
       </CardContent>
